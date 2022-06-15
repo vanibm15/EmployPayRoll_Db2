@@ -21,8 +21,7 @@ public class EmpRoll2 {
             Statement statement = con.createStatement();
            // statement.executeUpdate("alter table employee add column phone varchar(30);");
            // statement.executeUpdate("alter table employee add column address varchar(60);");
-            statement.executeUpdate("update employee set name='Terissa',\n" +
-                    "department='sales-marketing' where id=1;");
+            statement.executeUpdate("alter table employee add column tax varchar(30);");
             ResultSet resultSet = statement.executeQuery("  select * from employee");
             while (resultSet.next()) {
                 System.out.println("id:" + resultSet.getInt("id"));
@@ -33,6 +32,7 @@ public class EmpRoll2 {
                 System.out.println("Gender:" + resultSet.getString("Gender"));
                 System.out.println("phone:" + resultSet.getInt("phone"));
                 System.out.println("address:" + resultSet.getString("address"));
+                System.out.println("tax:" + resultSet.getString("tax"));
 
 
             }
