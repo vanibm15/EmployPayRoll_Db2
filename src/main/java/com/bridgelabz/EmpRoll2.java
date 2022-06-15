@@ -19,9 +19,10 @@ public class EmpRoll2 {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement = con.createStatement();
-            statement.executeUpdate("alter table employee add column phone varchar(30);");
-            statement.executeUpdate("alter table employee add column address varchar(60);");
-
+           // statement.executeUpdate("alter table employee add column phone varchar(30);");
+           // statement.executeUpdate("alter table employee add column address varchar(60);");
+            statement.executeUpdate("update employee set name='Terissa',\n" +
+                    "department='sales-marketing' where id=1;");
             ResultSet resultSet = statement.executeQuery("  select * from employee");
             while (resultSet.next()) {
                 System.out.println("id:" + resultSet.getInt("id"));
